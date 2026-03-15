@@ -19,7 +19,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 glass-strong">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="LTM Services" className="h-10 w-auto object-contain" />
+          <img src={logo} alt="LTM Services" className="h-14 w-auto object-contain" />
         </Link>
 
         {/* Desktop nav */}
@@ -37,7 +37,7 @@ const Header = () => {
           ))}
           <Link
             to="/contact"
-            className="gradient-gold text-primary-foreground px-6 py-2.5 rounded-lg text-sm font-semibold tracking-wide uppercase transition-all duration-300 hover:shadow-[0_8px_32px_hsl(40_65%_50%/0.3)]"
+            className="gradient-gold text-primary-foreground px-6 py-2.5 rounded-lg text-sm font-semibold tracking-wide uppercase transition-all duration-300 hover:shadow-[0_8px_40px_hsl(40_65%_50%/0.45)] hover:brightness-110"
           >
             Get a Quote
           </Link>
