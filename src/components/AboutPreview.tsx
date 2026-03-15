@@ -26,18 +26,20 @@ const AboutPreview = () => {
             <img src={aboutBg} alt="LTM Services team" className="w-full h-[450px] lg:h-[550px] object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
             {/* Stats overlay */}
-            <div className="absolute bottom-6 left-6 right-6 glass rounded-xl p-6 flex gap-8">
-              <div>
-                <div className="text-2xl font-bold text-primary">PPM</div>
-                <div className="text-xs text-muted-foreground">Planned Maintenance</div>
+            <div className="absolute bottom-6 left-6 right-6 glass rounded-xl p-6 flex items-center justify-around">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary font-display">PPM</div>
+                <div className="text-xs text-muted-foreground mt-1">Planned Maintenance</div>
               </div>
-              <div>
-                <div className="text-2xl font-bold text-primary">Multi-Site</div>
-                <div className="text-xs text-muted-foreground">Coverage</div>
+              <div className="w-px h-10 bg-border/50" />
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary font-display">Multi-Site</div>
+                <div className="text-xs text-muted-foreground mt-1">Coverage</div>
               </div>
-              <div>
-                <div className="text-2xl font-bold text-primary">24/7</div>
-                <div className="text-xs text-muted-foreground">Support</div>
+              <div className="w-px h-10 bg-border/50" />
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary font-display">24/7</div>
+                <div className="text-xs text-muted-foreground mt-1">Support</div>
               </div>
             </div>
           </motion.div>
