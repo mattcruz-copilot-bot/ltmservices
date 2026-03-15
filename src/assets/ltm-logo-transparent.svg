@@ -1,0 +1,26 @@
+<svg width="420" height="160" viewBox="0 0 420 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="LTM Services logo">
+  <g transform="translate(128,8)">
+    <path d="M8 48C34 44 56 36 86 24" stroke="#D6B36A" stroke-width="3" stroke-linecap="round"/>
+    <path d="M10 56C38 54 64 44 98 30" stroke="#D6B36A" stroke-width="3" stroke-linecap="round"/>
+    <path d="M12 64C40 64 70 54 108 38" stroke="#D6B36A" stroke-width="3" stroke-linecap="round"/>
+    <path d="M15 72C44 74 78 64 116 46" stroke="#D6B36A" stroke-width="3" stroke-linecap="round"/>
+    <path d="M18 80C48 84 84 74 122 56" stroke="#D6B36A" stroke-width="3" stroke-linecap="round"/>
+    <path d="M22 88C54 94 90 86 126 68" stroke="#D6B36A" stroke-width="3" stroke-linecap="round"/>
+
+    <g transform="translate(126,26)" stroke="#D6B36A" stroke-width="3">
+      <circle cx="10" cy="10" r="7"/>
+      <circle cx="26" cy="10" r="7"/>
+      <circle cx="42" cy="10" r="7"/>
+      <circle cx="18" cy="24" r="7"/>
+      <circle cx="34" cy="24" r="7"/>
+      <circle cx="10" cy="38" r="7"/>
+      <circle cx="26" cy="38" r="7"/>
+      <circle cx="42" cy="38" r="7"/>
+      <circle cx="18" cy="52" r="7"/>
+      <circle cx="34" cy="52" r="7"/>
+    </g>
+  </g>
+
+  <text x="210" y="112" text-anchor="middle" font-family="Sora, Outfit, Arial, sans-serif" font-size="72" font-weight="800" letter-spacing="2" fill="#F4F5F7">LTM</text>
+  <text x="210" y="148" text-anchor="middle" font-family="Outfit, Arial, sans-serif" font-size="58" font-weight="500" letter-spacing="0.5" fill="#D6B36A">Services</text>
+</svg>
