@@ -27,7 +27,7 @@ const CTASection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
-              className="gradient-gold text-primary-foreground px-8 py-4 rounded-lg font-semibold tracking-wide inline-flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_8px_32px_hsl(40_65%_50%/0.3)] hover:-translate-y-0.5"
+              className="gradient-gold text-primary-foreground px-8 py-4 rounded-lg font-semibold tracking-wide inline-flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-[0_8px_40px_hsl(40_65%_50%/0.45)] hover:brightness-110 hover:-translate-y-0.5"
             >
               Request a Quote
               <ArrowRight size={18} />

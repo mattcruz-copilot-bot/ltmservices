@@ -37,7 +37,7 @@ const Header = () => {
           ))}
           <Link
             to="/contact"
-            className="gradient-gold text-primary-foreground px-6 py-2.5 rounded-lg text-sm font-semibold tracking-wide uppercase transition-all duration-300 hover:shadow-[0_8px_32px_hsl(40_65%_50%/0.3)]"
+            className="gradient-gold text-primary-foreground px-6 py-2.5 rounded-lg text-sm font-semibold tracking-wide uppercase transition-all duration-300 hover:shadow-[0_8px_40px_hsl(40_65%_50%/0.45)] hover:brightness-110"
           >
             Get a Quote
           </Link>

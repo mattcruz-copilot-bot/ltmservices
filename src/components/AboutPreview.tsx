@@ -28,12 +28,12 @@ const AboutPreview = () => {
             {/* Stats overlay */}
             <div className="absolute bottom-6 left-6 right-6 glass rounded-xl p-6 flex gap-8">
               <div>
-                <div className="text-2xl font-bold text-primary">15+</div>
-                <div className="text-xs text-muted-foreground">Years Experience</div>
+                <div className="text-2xl font-bold text-primary">PPM</div>
+                <div className="text-xs text-muted-foreground">Planned Maintenance</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-primary">500+</div>
-                <div className="text-xs text-muted-foreground">Sites Managed</div>
+                <div className="text-2xl font-bold text-primary">Multi-Site</div>
+                <div className="text-xs text-muted-foreground">Coverage</div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-primary">24/7</div>
