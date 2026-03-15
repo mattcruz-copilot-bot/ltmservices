@@ -140,7 +140,7 @@ const Contact = () => {
                   { icon: MapPin, label: "Location", value: "London, United Kingdom" },
                   { icon: Clock, label: "Working Hours", value: "Mon - Fri: 8:00 - 18:00" },
                 ].map((item) => (
-                  <div key={item.label} className="glass rounded-xl p-6 hover-lift">
+                  <div key={item.label} className={`glass rounded-xl p-6 hover-lift ${['highlight-top-left', 'highlight-top-right', 'highlight-bottom-right', 'highlight-top-left'][['Phone','Email','Location','Working Hours'].indexOf(item.label)]}`}>
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-lg gradient-gold flex items-center justify-center shrink-0">
                         <item.icon size={18} className="text-primary-foreground" />

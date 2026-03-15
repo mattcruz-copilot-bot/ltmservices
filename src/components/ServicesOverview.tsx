@@ -65,7 +65,7 @@ const ServicesOverview = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass rounded-xl p-8 hover-lift group cursor-default"
+              className={`glass rounded-xl p-8 hover-lift group cursor-default ${index % 3 === 0 ? 'highlight-top-left' : index % 3 === 1 ? 'highlight-bottom-right' : 'highlight-top-right'}`}
             >
               <div className="w-12 h-12 rounded-lg gradient-gold flex items-center justify-center mb-6 group-hover:shadow-[0_4px_20px_hsl(40_65%_50%/0.3)] transition-shadow">
                 <service.icon size={22} className="text-primary-foreground" />

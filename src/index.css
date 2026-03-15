@@ -127,6 +127,49 @@
       0 0 60px hsl(40 65% 50% / 0.08);
   }
 
+  /* Card highlight glows — small cards */
+  .highlight-top-left {
+    position: relative;
+    overflow: hidden;
+  }
+  .highlight-top-left::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, hsl(40 65% 50% / 0.5), transparent);
+  }
+
+  .highlight-bottom-right {
+    position: relative;
+    overflow: hidden;
+  }
+  .highlight-bottom-right::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(40 65% 50% / 0.5));
+  }
+
+  .highlight-top-right {
+    position: relative;
+    overflow: hidden;
+  }
+  .highlight-top-right::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(40 65% 50% / 0.5));
+  }
+
   /* Subtle section divider glow */
   .section-glow {
     position: relative;
