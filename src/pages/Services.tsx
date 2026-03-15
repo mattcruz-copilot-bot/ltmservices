@@ -93,7 +93,7 @@ const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
-                  className="glass rounded-xl p-8 hover-lift group"
+                  className={`glass rounded-xl p-8 hover-lift group ${index % 2 === 0 ? 'highlight-top-left' : 'highlight-bottom-right'}`}
                 >
                   <div className="flex items-center gap-4 mb-5">
                     <div className="w-12 h-12 rounded-lg gradient-gold flex items-center justify-center shrink-0 group-hover:shadow-[0_4px_24px_hsl(40_65%_50%/0.35)] transition-shadow">

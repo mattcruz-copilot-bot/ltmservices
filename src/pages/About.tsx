@@ -101,7 +101,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="glass rounded-xl p-8 text-center hover-lift"
+                  className={`glass rounded-xl p-8 text-center hover-lift ${i === 0 ? 'highlight-top-left' : i === 1 ? 'highlight-bottom-right' : 'highlight-top-right'}`}
                 >
                   <div className="w-14 h-14 rounded-xl gradient-gold flex items-center justify-center mx-auto mb-6">
                     <v.icon size={24} className="text-primary-foreground" />
