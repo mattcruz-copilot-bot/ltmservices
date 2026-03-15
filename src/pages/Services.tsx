@@ -65,7 +65,7 @@ const Services = () => {
         {/* Hero */}
         <section className="relative pt-40 pb-24 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={servicesBg} alt="" className="w-full h-full object-cover" />
+            <img src={servicesBg} alt="" className="w-full h-full object-cover object-[center_30%]" />
             <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/75 to-background/50" />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
           </div>
