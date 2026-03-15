@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <img src={logo} alt="LTM Services" className="h-20 md:h-24 w-auto object-contain" />
+            <img src={logo} alt="LTM Services" className="h-[5.5rem] md:h-[6.5rem] w-auto object-contain rounded-lg" />
             <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
               Expert facilities management & maintenance services across London and the UK.
             </p>
