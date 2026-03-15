@@ -17,7 +17,7 @@ const About = () => {
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative pt-40 pb-20 overflow-hidden">
+        <section className="relative pt-44 pb-20 overflow-hidden">
           <div className="absolute inset-0">
             <img src={aboutBg} alt="" className="w-full h-full object-cover object-[center_30%]" />
             <div className="absolute inset-0 bg-background/80" />
