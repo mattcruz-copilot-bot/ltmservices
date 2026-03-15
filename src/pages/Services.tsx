@@ -63,7 +63,7 @@ const Services = () => {
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative pt-40 pb-24 overflow-hidden">
+        <section className="relative pt-52 pb-24 overflow-hidden">
           <div className="absolute inset-0">
             <img src={servicesBg} alt="" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/75 to-background/50" />
