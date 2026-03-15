@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import { motion } from "framer-motion";
 import { CheckCircle2, Target, Eye, Award } from "lucide-react";
-import aboutBg from "@/assets/about-bg.jpg";
+import aboutHero from "@/assets/about-hero.jpg";
 
 const values = [
   { icon: Target, title: "Precision", description: "Every project is delivered with meticulous attention to detail and quality standards." },
