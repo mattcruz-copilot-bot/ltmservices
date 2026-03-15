@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import aboutBg from "@/assets/about-bg.jpg";
+import aboutPreviewBg from "@/assets/about-preview-bg.jpg";
 
 const highlights = [
   "Higher Education & Healthcare/NHS specialists",
