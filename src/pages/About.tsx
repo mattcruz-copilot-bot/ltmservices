@@ -19,7 +19,7 @@ const About = () => {
         {/* Hero */}
         <section className="relative pt-40 pb-20 overflow-hidden">
           <div className="absolute inset-0">
-            <img src={aboutBg} alt="" className="w-full h-full object-cover" />
+            <img src={aboutBg} alt="" className="w-full h-full object-cover object-[center_30%]" />
             <div className="absolute inset-0 bg-background/80" />
           </div>
           <div className="container relative mx-auto px-6">
