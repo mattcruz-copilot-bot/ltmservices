@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/ltm-logo-transparent.svg";
+import logo from "@/assets/ltm-logo-transparent.png";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -19,7 +19,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 glass-strong">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="LTM Services" className="h-14 md:h-16 w-auto object-contain" />
+          <img src={logo} alt="LTM Services" className="h-16 md:h-20 w-auto object-contain" />
         </Link>
 
         {/* Desktop nav */}
