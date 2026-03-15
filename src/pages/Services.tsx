@@ -2,7 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import { motion } from "framer-motion";
-import { Wrench, Shield, ClipboardCheck, Building2, Zap, Users, Thermometer, Droplets } from "lucide-react";
+import { Wrench, Shield, ClipboardCheck, Building2, Zap, Users, Thermometer, Droplets, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import servicesBg from "@/assets/services-bg.jpg";
 
 const services = [
@@ -62,18 +63,19 @@ const Services = () => {
       <Header />
       <main>
         {/* Hero */}
-        <section className="relative pt-32 pb-20 overflow-hidden">
+        <section className="relative pt-32 pb-24 overflow-hidden">
           <div className="absolute inset-0">
             <img src={servicesBg} alt="" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-background/80" />
+            <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/75 to-background/50" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
           </div>
           <div className="container relative mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
               <span className="text-primary text-sm font-semibold uppercase tracking-[0.2em] mb-4 block">Our Services</span>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 max-w-3xl">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 max-w-3xl leading-tight">
                 Comprehensive <span className="text-gradient-gold">FM Solutions</span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-2xl">
+              <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
                 Full scale PPM and reactive maintenance for all industries and sectors.
               </p>
             </motion.div>
@@ -81,9 +83,9 @@ const Services = () => {
         </section>
 
         {/* Services grid */}
-        <section className="py-24">
+        <section className="py-24 section-glow">
           <div className="container mx-auto px-6">
-            <div className="space-y-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {services.map((service, index) => (
                 <motion.div
                   key={service.title}
@@ -91,30 +93,43 @@ const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
-                  className="glass rounded-xl p-8 lg:p-10 hover-lift"
+                  className="glass rounded-xl p-8 hover-lift group"
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8">
-                    <div>
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className="w-12 h-12 rounded-lg gradient-gold flex items-center justify-center shrink-0">
-                          <service.icon size={22} className="text-primary-foreground" />
-                        </div>
-                        <h3 className="text-xl font-semibold">{service.title}</h3>
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="w-12 h-12 rounded-lg gradient-gold flex items-center justify-center shrink-0 group-hover:shadow-[0_4px_24px_hsl(40_65%_50%/0.35)] transition-shadow">
+                      <service.icon size={22} className="text-primary-foreground" />
+                    </div>
+                    <h3 className="text-xl font-semibold font-display">{service.title}</h3>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed mb-5">{service.description}</p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {service.features.map((f) => (
+                      <div key={f} className="flex items-center gap-2 text-sm text-foreground/70">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                        {f}
                       </div>
-                      <p className="text-muted-foreground leading-relaxed">{service.description}</p>
-                    </div>
-                    <div className="space-y-2">
-                      {service.features.map((f) => (
-                        <div key={f} className="flex items-center gap-2 text-sm text-foreground/70">
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                          {f}
-                        </div>
-                      ))}
-                    </div>
+                    ))}
                   </div>
                 </motion.div>
               ))}
             </div>
+
+            {/* CTA inline */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-center mt-16"
+            >
+              <p className="text-muted-foreground mb-6 text-lg">Need a tailored maintenance solution?</p>
+              <Link
+                to="/contact"
+                className="gradient-gold text-primary-foreground px-8 py-4 rounded-lg font-semibold tracking-wide inline-flex items-center gap-2 transition-all duration-300 hover:shadow-[0_8px_40px_hsl(40_65%_50%/0.45)] hover:brightness-110 hover:-translate-y-0.5"
+              >
+                Get a Free Quote <ArrowRight size={18} />
+              </Link>
+            </motion.div>
           </div>
         </section>
 
