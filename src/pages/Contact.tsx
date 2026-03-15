@@ -29,7 +29,7 @@ const Contact = () => {
       <Header />
       <main>
         {/* Hero */}
-        <section className="pt-56 pb-16">
+        <section className="pt-40 pb-16">
           <div className="container mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
               <span className="text-primary text-sm font-semibold uppercase tracking-[0.2em] mb-4 block">Contact Us</span>
