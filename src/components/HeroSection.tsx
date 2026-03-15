@@ -8,12 +8,12 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background image with overlay */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover object-[center_30%]" />
+        <img src={heroBg} alt="London commercial office building exterior" className="w-full h-full object-cover object-[center_22%]" />
         <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
       </div>
 
-      <div className="container relative mx-auto px-6 pt-32 pb-20">
+      <div className="container relative mx-auto px-6 pt-48 pb-24">
         <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
