@@ -7,33 +7,33 @@
 @layer base {
   :root {
     /* Deep charcoal/navy base — premium corporate */
-    --background: 220 20% 7%;
+    --background: 225 20% 8%;
     --foreground: 40 10% 92%;
 
-    --card: 220 18% 10%;
+    --card: 225 18% 12%;
     --card-foreground: 40 10% 92%;
 
-    --popover: 220 18% 10%;
+    --popover: 225 18% 12%;
     --popover-foreground: 40 10% 92%;
 
     /* Gold accent — matches logo */
     --primary: 40 65% 50%;
-    --primary-foreground: 220 20% 7%;
+    --primary-foreground: 225 20% 7%;
 
-    --secondary: 220 15% 16%;
+    --secondary: 225 15% 18%;
     --secondary-foreground: 40 10% 92%;
 
-    --muted: 220 15% 14%;
+    --muted: 225 12% 16%;
     --muted-foreground: 220 10% 55%;
 
     --accent: 40 65% 50%;
-    --accent-foreground: 220 20% 7%;
+    --accent-foreground: 225 20% 7%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
+    --border: 225 12% 22%;
+    --input: 225 15% 18%;
     --ring: 40 65% 50%;
 
     --radius: 0.75rem;
@@ -42,29 +42,29 @@
     --gold: 40 65% 50%;
     --gold-light: 40 55% 65%;
     --gold-dark: 40 70% 35%;
-    --navy: 220 25% 12%;
-    --navy-deep: 220 20% 7%;
-    --navy-light: 220 18% 18%;
-    --glass-border: 220 15% 25%;
-    --glass-bg: 220 20% 10%;
+    --navy: 225 25% 14%;
+    --navy-deep: 225 20% 8%;
+    --navy-light: 225 18% 20%;
+    --glass-border: 225 12% 28%;
+    --glass-bg: 225 18% 13%;
 
     /* Gradients */
     --gradient-gold: linear-gradient(135deg, hsl(40 65% 50%), hsl(35 70% 60%));
-    --gradient-dark: linear-gradient(180deg, hsl(220 20% 7%), hsl(220 25% 12%));
-    --gradient-glass: linear-gradient(135deg, hsl(220 20% 12% / 0.6), hsl(220 20% 8% / 0.4));
+    --gradient-dark: linear-gradient(180deg, hsl(225 20% 8%), hsl(225 25% 14%));
+    --gradient-glass: linear-gradient(135deg, hsl(225 18% 15% / 0.8), hsl(225 18% 10% / 0.5));
 
     /* Shadows */
     --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.3);
     --shadow-elevated: 0 16px 48px hsl(0 0% 0% / 0.4);
     --shadow-gold: 0 8px 32px hsl(40 65% 50% / 0.15);
 
-    --sidebar-background: 220 20% 7%;
+    --sidebar-background: 225 20% 8%;
     --sidebar-foreground: 40 10% 92%;
     --sidebar-primary: 40 65% 50%;
-    --sidebar-primary-foreground: 220 20% 7%;
-    --sidebar-accent: 220 15% 16%;
+    --sidebar-primary-foreground: 225 20% 7%;
+    --sidebar-accent: 225 15% 18%;
     --sidebar-accent-foreground: 40 10% 92%;
-    --sidebar-border: 220 15% 18%;
+    --sidebar-border: 225 12% 22%;
     --sidebar-ring: 40 65% 50%;
   }
 }
