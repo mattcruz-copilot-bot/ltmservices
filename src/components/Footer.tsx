@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
-import logo from "@/assets/ltm-logo-transparent.png";
+import logo from "@/assets/ltm-logo-transparent.svg";
 
 const Footer = () => {
   return (
@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <img src={logo} alt="LTM Services" className="h-16 w-auto object-contain mix-blend-lighten" />
+            <img src={logo} alt="LTM Services" className="h-16 md:h-[4.5rem] w-auto object-contain" />
             <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
               Expert facilities management & maintenance services across London and the UK.
             </p>
