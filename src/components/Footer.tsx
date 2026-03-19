@@ -36,7 +36,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-sm font-semibold uppercase tracking-wider text-primary">Services</h4>
             <nav className="flex flex-col gap-3">
-              {["Planned Preventative Maintenance", "Reactive Maintenance", "Compliance Management", "FM Contracts"].map((s) => (
+              {["Planned Preventative Maintenance", "Reactive Maintenance", "Fan Coil & VAV Servicing", "Grill & Diffuser Cleaning", "Commercial Cleaning"].map((s) => (
                 <span key={s} className="text-sm text-muted-foreground">{s}</span>
               ))}
             </nav>

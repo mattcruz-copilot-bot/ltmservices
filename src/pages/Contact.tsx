@@ -124,7 +124,9 @@ const Contact = () => {
                       <option>Compliance Management</option>
                       <option>FM Contract Management</option>
                       <option>Electrical Services</option>
-                      <option>HVAC & Mechanical</option>
+                      <option>Fan Coil & VAV Servicing</option>
+                      <option>Grill & Diffuser Cleaning</option>
+                      <option>Commercial Cleaning</option>
                       <option>Other</option>
                     </select>
                   </div>

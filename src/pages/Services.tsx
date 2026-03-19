@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 import { motion } from "framer-motion";
-import { Wrench, Shield, ClipboardCheck, Building2, Zap, Users, Thermometer, Droplets, ArrowRight } from "lucide-react";
+import { Wrench, Shield, ClipboardCheck, Building2, Zap, Users, Wind, Fan, Sparkles, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import servicesBg from "@/assets/services-bg.jpg";
 
@@ -38,22 +38,29 @@ const services = [
     features: ["EICR testing", "Emergency lighting", "PAT testing", "Installation & upgrades"],
   },
   {
-    icon: Thermometer,
-    title: "HVAC & Mechanical",
-    description: "Heating, ventilation and air conditioning services to maintain optimal building environments. We service, repair and install all major HVAC systems.",
-    features: ["AHU maintenance", "Chiller servicing", "BMS integration", "Energy optimisation"],
+    icon: Fan,
+    title: "Fan Coil & VAV Servicing",
+    description: "Specialist servicing of Fan Coil Units (FCUs) and Variable Air Volume (VAV) systems. We maintain optimal airflow, temperature control, and energy efficiency across your building's air conditioning infrastructure.",
+    features: ["FCU filter replacement & cleaning", "VAV box calibration & testing", "Actuator & valve servicing", "Seasonal changeover programmes"],
   },
   {
-    icon: Droplets,
-    title: "Plumbing & Water Systems",
-    description: "From routine plumbing repairs to Legionella risk assessments, our engineers ensure your water systems are safe, compliant, and running efficiently.",
-    features: ["Legionella risk assessments", "Water treatment", "Drainage & repairs", "TMV servicing"],
+    icon: Wind,
+    title: "Grill & Diffuser Cleaning",
+    description: "Professional deep cleaning of air supply grilles, return air grilles, and ceiling diffusers. Dirty grilles restrict airflow, reduce indoor air quality, and create an unprofessional appearance — our service eliminates all three.",
+    features: ["Supply & return grille cleaning", "Ceiling diffuser restoration", "Improved indoor air quality", "Reduced energy consumption"],
   },
   {
     icon: Users,
     title: "Dedicated Support",
     description: "Every client gets a dedicated point of contact. All works are tracked, transparent, and reported regularly so you always know the status of your facilities.",
     features: ["Dedicated account manager", "Real-time job tracking", "Monthly performance reports", "Complete asset history"],
+  },
+  {
+    icon: Sparkles,
+    title: "Commercial Cleaning",
+    description: "Professional cleaning services for offices, schools, universities, healthcare facilities, and commercial buildings of all types. Delivered to the highest standards with flexible scheduling to suit your operations.",
+    features: ["Office & workspace cleaning", "Educational facility cleaning", "Healthcare environment cleaning", "Flexible contract options"],
+    comingSoon: true,
   },
 ];
 
@@ -93,8 +100,13 @@ const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
-                  className={`glass rounded-xl p-8 hover-lift group ${index % 2 === 0 ? 'highlight-top-left' : 'highlight-bottom-right'}`}
+                  className={`glass rounded-xl p-8 hover-lift group relative overflow-hidden ${index % 2 === 0 ? 'highlight-top-left' : 'highlight-bottom-right'}`}
                 >
+                  {service.comingSoon && (
+                    <div className="absolute top-4 right-4 bg-primary/20 text-primary text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full border border-primary/30">
+                      Coming Soon
+                    </div>
+                  )}
                   <div className="flex items-center gap-4 mb-5">
                     <div className="w-12 h-12 rounded-lg gradient-gold flex items-center justify-center shrink-0 group-hover:shadow-[0_4px_24px_hsl(40_65%_50%/0.35)] transition-shadow">
                       <service.icon size={22} className="text-primary-foreground" />
