@@ -2,26 +2,44 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
-import { useState, FormEvent } from "react";
+import { useState, useRef, FormEvent } from "react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID = "service_ltm";
+const EMAILJS_TEMPLATE_ID = "template_ltm";
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
 const Contact = () => {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
-    // EmailJS integration placeholder — replace with your service/template/user IDs
-    setTimeout(() => {
+    try {
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current!,
+        EMAILJS_PUBLIC_KEY
+      );
       toast({
         title: "Message Sent",
         description: "Thank you for your enquiry. We'll get back to you shortly.",
       });
+      formRef.current?.reset();
+    } catch {
+      toast({
+        title: "Failed to Send",
+        description: "Something went wrong. Please try calling us or emailing directly.",
+        variant: "destructive",
+      });
+    } finally {
       setLoading(false);
-      (e.target as HTMLFormElement).reset();
-    }, 1000);
+    }
   };
 
   return (
@@ -54,12 +72,13 @@ const Contact = () => {
                 className="glass rounded-xl p-8 lg:p-10"
               >
                 <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                       <label className="text-sm font-medium text-foreground/80 mb-2 block">Full Name *</label>
                       <input
                         type="text"
+                        name="from_name"
                         required
                         className="w-full bg-secondary/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                         placeholder="John Smith"
@@ -69,6 +88,7 @@ const Contact = () => {
                       <label className="text-sm font-medium text-foreground/80 mb-2 block">Email *</label>
                       <input
                         type="email"
+                        name="reply_to"
                         required
                         className="w-full bg-secondary/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                         placeholder="john@company.co.uk"
@@ -80,14 +100,16 @@ const Contact = () => {
                       <label className="text-sm font-medium text-foreground/80 mb-2 block">Phone</label>
                       <input
                         type="tel"
+                        name="phone"
                         className="w-full bg-secondary/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                        placeholder="020 1234 5678"
+                        placeholder="07944 885705"
                       />
                     </div>
                     <div>
                       <label className="text-sm font-medium text-foreground/80 mb-2 block">Company</label>
                       <input
                         type="text"
+                        name="company"
                         className="w-full bg-secondary/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                         placeholder="Your Company Ltd"
                       />
@@ -95,7 +117,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <label className="text-sm font-medium text-foreground/80 mb-2 block">Service Required</label>
-                    <select className="w-full bg-secondary/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all">
+                    <select name="service" className="w-full bg-secondary/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all">
                       <option value="">Select a service</option>
                       <option>Planned Preventative Maintenance</option>
                       <option>Reactive Maintenance</option>
@@ -109,6 +131,7 @@ const Contact = () => {
                   <div>
                     <label className="text-sm font-medium text-foreground/80 mb-2 block">Message *</label>
                     <textarea
+                      name="message"
                       required
                       rows={5}
                       className="w-full bg-secondary/50 border border-border rounded-lg px-4 py-3 text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
@@ -135,8 +158,8 @@ const Contact = () => {
                 className="space-y-6"
               >
                 {[
-                  { icon: Phone, label: "Phone", value: "020 1234 5678", href: "tel:+442012345678" },
-                  { icon: Mail, label: "Email", value: "info@ltmservices.co.uk", href: "mailto:info@ltmservices.co.uk" },
+                  { icon: Phone, label: "Phone", value: "07944 885705", href: "tel:+447944885705" },
+                  { icon: Mail, label: "Email", value: "info@itm-ukservices.co.uk", href: "mailto:info@itm-ukservices.co.uk" },
                   { icon: MapPin, label: "Location", value: "London, United Kingdom" },
                   { icon: Clock, label: "Working Hours", value: "Mon - Fri: 8:00 - 18:00" },
                 ].map((item) => (
@@ -162,7 +185,7 @@ const Contact = () => {
                   <p className="text-sm text-muted-foreground mb-4">
                     For urgent reactive maintenance outside of working hours, contact our 24/7 emergency line.
                   </p>
-                  <a href="tel:+442012345678" className="gradient-gold text-primary-foreground px-6 py-2.5 rounded-lg text-sm font-semibold inline-flex items-center gap-2">
+                  <a href="tel:+447944885705" className="gradient-gold text-primary-foreground px-6 py-2.5 rounded-lg text-sm font-semibold inline-flex items-center gap-2">
                     <Phone size={16} />
                     Emergency Line
                   </a>
