@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Wrench, Shield, ClipboardCheck, Building2, Zap, Users } from "lucide-react";
+import { Wrench, Shield, ClipboardCheck, Building2, Zap, Fan, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
@@ -24,14 +24,14 @@ const services = [
     description: "Full-scale facilities management contracts for large sites across Higher Education, Healthcare/NHS and Commercial sectors.",
   },
   {
-    icon: Zap,
-    title: "Electrical & Mechanical",
-    description: "Expert electrical and mechanical services including testing, installation, and maintenance by qualified engineers.",
+    icon: Fan,
+    title: "Fan Coil, VAV & Air Distribution",
+    description: "Specialist servicing of Fan Coil Units, VAV systems, and professional grill and diffuser cleaning for optimal air quality.",
   },
   {
-    icon: Users,
-    title: "Dedicated Account Management",
-    description: "Transparent progress tracking with complete site and asset history accessible to our engineering teams.",
+    icon: Sparkles,
+    title: "Commercial Cleaning",
+    description: "Professional cleaning for offices, schools, healthcare facilities, and commercial buildings — delivered to the highest standards.",
   },
 ];
 
