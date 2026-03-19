@@ -46,13 +46,13 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-sm font-semibold uppercase tracking-wider text-primary">Contact</h4>
             <div className="space-y-3">
-              <a href="tel:+442012345678" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="tel:+447944885705" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
                 <Phone size={16} className="text-primary" />
-                020 1234 5678
+                07944 885705
               </a>
-              <a href="mailto:info@ltmservices.co.uk" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:info@itm-ukservices.co.uk" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
                 <Mail size={16} className="text-primary" />
-                info@ltmservices.co.uk
+                info@itm-ukservices.co.uk
               </a>
               <div className="flex items-start gap-3 text-sm text-muted-foreground">
                 <MapPin size={16} className="text-primary mt-0.5 shrink-0" />

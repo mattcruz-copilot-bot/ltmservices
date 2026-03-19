@@ -33,7 +33,7 @@ const Policies = () => {
 
               <div className="glass rounded-xl p-8 space-y-4">
                 <h2 className="text-xl font-semibold text-foreground">Contact Us</h2>
-                <p>If you have any questions about this privacy policy or our data practices, please contact us at info@ltmservices.co.uk.</p>
+                <p>If you have any questions about this privacy policy or our data practices, please contact us at info@itm-ukservices.co.uk..</p>
               </div>
             </div>
           </div>
