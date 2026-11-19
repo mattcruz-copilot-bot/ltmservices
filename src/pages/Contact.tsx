@@ -4,11 +4,7 @@ import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { useState, useRef, FormEvent } from "react";
 import { useToast } from "@/hooks/use-toast";
-import emailjs from "@emailjs/browser";
-
-const EMAILJS_SERVICE_ID = "service_ltm";
-const EMAILJS_TEMPLATE_ID = "template_ltm";
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -18,14 +14,19 @@ const Contact = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+    const fd = new FormData(formRef.current!);
+    const get = (k: string) => String(fd.get(k) ?? "").trim();
 
     try {
-      await emailjs.sendForm(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        formRef.current!,
-        EMAILJS_PUBLIC_KEY
-      );
+      const { error } = await supabase.from("contact_submissions").insert({
+        full_name: get("from_name").slice(0, 200),
+        email: get("reply_to").slice(0, 255),
+        phone: get("phone").slice(0, 50) || null,
+        company: get("company").slice(0, 200) || null,
+        service: get("service").slice(0, 200) || null,
+        message: get("message").slice(0, 5000),
+      });
+      if (error) throw error;
       toast({
         title: "Message Sent",
         description: "Thank you for your enquiry. We'll get back to you shortly.",
