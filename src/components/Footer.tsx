@@ -50,9 +50,9 @@ const Footer = () => {
                 <Phone size={16} className="text-primary" />
                 07944 885705
               </a>
-              <a href="mailto:info@itm-ukservices.co.uk" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:info@ltm-ukservices.co.uk" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors">
                 <Mail size={16} className="text-primary" />
-                info@itm-ukservices.co.uk
+                info@ltm-ukservices.co.uk
               </a>
               <div className="flex items-start gap-3 text-sm text-muted-foreground">
                 <MapPin size={16} className="text-primary mt-0.5 shrink-0" />

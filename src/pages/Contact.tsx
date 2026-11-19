@@ -162,7 +162,7 @@ const Contact = () => {
               >
                 {[
                   { icon: Phone, label: "Phone", value: "07944 885705", href: "tel:+447944885705" },
-                  { icon: Mail, label: "Email", value: "info@itm-ukservices.co.uk", href: "mailto:info@itm-ukservices.co.uk" },
+                  { icon: Mail, label: "Email", value: "info@ltm-ukservices.co.uk", href: "mailto:info@ltm-ukservices.co.uk" },
                   { icon: MapPin, label: "Location", value: "London, United Kingdom" },
                   { icon: Clock, label: "Working Hours", value: "Mon - Fri: 8:00 - 18:00" },
                 ].map((item) => (
