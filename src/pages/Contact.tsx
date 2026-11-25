@@ -18,15 +18,38 @@ const Contact = () => {
     const get = (k: string) => String(fd.get(k) ?? "").trim();
 
     try {
-      const { error } = await supabase.from("contact_submissions").insert({
+      const submissionId = crypto.randomUUID();
+      const payload = {
         full_name: get("from_name").slice(0, 200),
         email: get("reply_to").slice(0, 255),
         phone: get("phone").slice(0, 50) || null,
         company: get("company").slice(0, 200) || null,
         service: get("service").slice(0, 200) || null,
         message: get("message").slice(0, 5000),
+      };
+
+      const { error } = await supabase.from("contact_submissions").insert({
+        id: submissionId,
+        ...payload,
       });
       if (error) throw error;
+
+      // Notify the owner. The enquiry is already saved at this point, so a
+      // notification failure must never tell the visitor their message was lost.
+      await supabase.functions
+        .invoke("contact-enquiry", {
+          body: {
+            from_name: payload.full_name,
+            reply_to: payload.email,
+            phone: payload.phone ?? "",
+            company: payload.company ?? "",
+            service: payload.service ?? "",
+            message: payload.message,
+            submission_id: submissionId,
+          },
+        })
+        .catch(() => undefined);
+
       toast({
         title: "Message Sent",
         description: "Thank you for your enquiry. We'll get back to you shortly.",

@@ -3,3 +3,7 @@ project_id = "ffbevmsregpkefwqlkrz"
 [functions]
   [functions.auth-email-hook]
     verify_jwt = false
+  [functions.preview-transactional-email]
+    verify_jwt = false
+  [functions.contact-enquiry]
+    verify_jwt = false
